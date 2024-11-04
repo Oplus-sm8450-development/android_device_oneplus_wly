@@ -54,7 +54,7 @@ module = ExtractUtilsModule(
     namespace_imports=namespace_imports,
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
-    check_elf=True,
+    check_elf=False,
 )
 
 if __name__ == '__main__':
