@@ -9,6 +9,14 @@ include device/oneplus/sm8450-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/oneplus/wly
 
+# Kill lineage kernel build task while preserving kernel
+TARGET_NO_KERNEL_OVERRIDE := true
+
+TARGET_KERNEL_VERSION := 5.10
+LOCAL_KERNEL := ./kernel/Image
+PRODUCT_COPY_FILES += \
+ ./kernel/:kernel
+
 # Display
 TARGET_SCREEN_DENSITY := 450
 
