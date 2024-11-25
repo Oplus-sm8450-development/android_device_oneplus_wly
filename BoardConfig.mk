@@ -12,6 +12,14 @@ DEVICE_PATH := device/oneplus/wly
 # DTB
 TARGET_KERNEL_CONFIG += vendor/oplus/wly.config
 
+# Kill lineage kernel build task while preserving kernel
+TARGET_NO_KERNEL_OVERRIDE := true
+
+TARGET_KERNEL_VERSION := 5.10
+LOCAL_KERNEL := ./kernel/Image
+PRODUCT_COPY_FILES += \
+ ./kernel/:kernel
+
 # Display
 TARGET_SCREEN_DENSITY := 450
 
