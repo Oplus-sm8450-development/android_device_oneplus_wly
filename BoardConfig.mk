@@ -9,21 +9,11 @@ include device/oneplus/sm8450-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/oneplus/wly
 
-# DTB
-TARGET_KERNEL_CONFIG += vendor/oplus/wly.config
-
-# Kill lineage kernel build task while preserving kernel
-TARGET_NO_KERNEL_OVERRIDE := true
-
-TARGET_KERNEL_VERSION := 5.10
-LOCAL_KERNEL := ./kernel/Image
-PRODUCT_COPY_FILES += \
- ./kernel/:kernel
-
 # Display
 TARGET_SCREEN_DENSITY := 450
 
 # DTB/O
+BOARD_USES_DT := true
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/dtbo.img
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilts/dtb.img
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
